@@ -1,0 +1,28 @@
+<div class="mb-3">
+
+    <label for="taskTitleInput" class="fs-5">Título da tarefa</label>
+
+    <div class="row">
+        <div class="col-sm-6 col-md-6 col-xl-6">
+            <input
+                type="text"
+                class="form-control fs-5 me-3"
+                id="taskTitleInput"
+                (focus)="onSelectAll()"
+                [(ngModel)]="taskTitle"
+                #taskTitleInput
+            />
+        </div>
+
+        <div class="col-sm-auto col-md-auto col-xl-auto">
+            <button
+                type="button"
+                class="btn btn-primary fs-5"
+                (click)="onCreateTask()"
+            >
+                Salvar
+                <i class="fa-solid fa-floppy-disk ps-3"></i>
+            </button>
+        </div>
+    </div>
+</div>

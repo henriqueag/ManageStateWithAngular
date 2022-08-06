@@ -1,0 +1,47 @@
+<div class="container-fluid">
+    <div class="row m-5">
+
+        <div class="sm-12 md-12">
+            <h1>Gerenciador de Tarefas<i class="fa-solid fa-list-check"></i></h1>
+        </div>
+
+        <div class="col-sm-12 col-md-12">
+            <task-form (createTask)="onCreateTask($event)"></task-form>
+        </div>
+
+        <div class="col-sm-4 col-md-4">
+            <div class="border-status">
+                <task-not-started
+                    [tasksNotStarted]="tasksNotStarted$ | async"
+                    (deleteTask)="onDeleteTask($event)"
+                    (nextStatus)="onAdvanceToInProgress($event)"
+                    >
+                </task-not-started>
+            </div>
+        </div>
+
+        <div class="col-sm-4 col-md-4">
+            <div class="border-status">
+                <task-in-progress
+                    [tasksInProgress]="tasksInProgress$ | async"
+                    (deleteTask)="onDeleteTask($event)"
+                    (nextStatus)="onAdvanceToFinished($event)"
+                    (previousStatus)="onBackToNotStarted($event)"
+                >
+                </task-in-progress>
+            </div>
+        </div>
+
+        <div class="col-sm-4 col-md-4">
+            <div class="border-status">
+                <task-finished
+                    [tasksFinished]="tasksFinished$ | async"
+                    (deleteTask)="onDeleteTask($event)"
+                    (previousStatus)="onBackToInProgress($event)"
+                >
+                </task-finished>
+            </div>
+        </div>
+
+    </div>
+</div>

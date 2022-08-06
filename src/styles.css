@@ -1,0 +1,27 @@
+.todo-header {
+    height: 55px;
+    width: 100%;
+    border-bottom: 4px solid #dbb21f;
+    background-color: cadetblue;
+}
+
+.todo-item {
+    height: 50px;
+    background-color: cornflowerblue;
+    border-left: 2px solid rgb(185, 185, 185);
+    border-right: 2px solid rgb(185, 185, 185);
+    border-bottom: 2px solid rgb(185, 185, 185);
+}
+
+.advance-status-button {
+    padding: 5px 10px;
+    cursor: pointer;
+    font-size: 30px;
+    margin-right: 5px;
+}
+
+.delete-task-button {
+    padding: 5px 10px;
+    cursor: pointer;
+    font-size: 25px;
+}

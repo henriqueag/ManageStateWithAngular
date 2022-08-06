@@ -1,0 +1,28 @@
+<div class="todo-header d-flex justify-content-between align-items-center px-5 py-2">
+    <span class="fs-3 fw-semibold">Não iniciado</span>
+    <i class="fa-solid fa-circle-play fs-2"></i>
+</div>
+
+<ng-container *ngFor="let task of tasksNotStarted">
+
+    <div class="todo-item d-flex justify-content-between align-items-center ps-3 pe-1 py-2">
+        <param [value]="task.taskId" [hidden]="true" #taskId>
+        <span class="fs-5 fw-semibold">{{ task.title }}</span>
+        <div>
+            <span
+                class="advance-status-button"
+                (click)="onNextStatus(taskId.value)"
+            >
+                <i class="fa-solid fa-circle-right"></i>
+            </span>
+            <span
+                class="delete-task-button"
+                (click)="onDeleteTask(taskId.value)"
+            >
+                <i class="fa-solid fa-trash fs-3"></i>
+            </span>
+        </div>
+    </div>
+
+</ng-container>
+
